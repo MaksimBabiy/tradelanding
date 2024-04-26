@@ -7,6 +7,9 @@
   font-style: normal;
   color: var(--surface); }
 
+html {
+  overflow-x: hidden; }
+
 ::-webkit-scrollbar {
   width: 10px; }
 
@@ -177,14 +180,15 @@ body {
 
 header {
   background-color: var(--main-color);
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 99999;
   transition: 0.3s all; }
   header.active {
-    transform: translateY(-42px);
+    transform: translateY(-42px); }
+  header.border {
     border-bottom: 1px solid var(--surface); }
   header .header_top {
     padding: 10px;
@@ -242,7 +246,7 @@ header {
               transform: scale(0.96); }
 
 section.title {
-  padding: 50px 0;
+  padding: 170px 0 50px 0;
   background-color: var(--main-color); }
   section.title .container {
     display: flex;
@@ -276,6 +280,9 @@ section.title {
         section.title .container .title_left-anim span {
           color: var(--btn-color);
           font-size: 14px;
+          min-height: 50px;
+          display: flex;
+          align-items: center;
           opacity: 1;
           animation: appear 2s infinite; }
     section.title .container .title_right {

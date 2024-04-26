@@ -46,6 +46,13 @@ if (window.innerWidth > 950) {
     }
   });
 }
+window.addEventListener("scroll", function (e) {
+  if (window.scrollY > 0) {
+    header.classList.add("border");
+  } else {
+    header.classList.remove("border");
+  }
+});
 
 window.addEventListener("scroll", function (e) {
   if (window.scrollY > 100) {

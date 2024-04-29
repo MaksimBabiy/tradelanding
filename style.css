@@ -125,7 +125,7 @@ ul a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 95px;
+  height: 75px;
 }
 .burgerMenuBlock.transform {
   -webkit-transform: translateY(40px);
@@ -1806,6 +1806,9 @@ footer .container p {
 }
 
 @media screen and (max-width: 900px) {
+  section.title {
+    padding: 100px 0 50px 0;
+  }
   section.about .container .about_bottom .about_bottom-bottom-items {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1954,6 +1957,14 @@ footer .container p {
 }
 
 @media screen and (max-width: 550px) {
+  header .header_main {
+    padding: 5px 0;
+  }
+  header .header_main .container button {
+    min-width: 40px;
+    min-height: 40px;
+    height: 40px;
+  }
   section.title {
     padding: 110px 0 50px 0;
   }
@@ -1981,6 +1992,9 @@ footer .container p {
 }
 
 @media screen and (max-width: 450px) {
+  section.title {
+    padding: 80px 0 50px 0;
+  }
   section.choice .container .choice_bottom .choice_bottom-btns {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

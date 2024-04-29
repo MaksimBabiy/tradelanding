@@ -27,6 +27,7 @@ let email_error = document.querySelector(".email_error");
 let order_forms = document.querySelectorAll("form");
 let emailInputs = document.querySelectorAll(".email");
 let header = document.querySelector("header");
+let html = document.querySelector("html");
 for (let item of faq_item) {
   item.addEventListener("click", function () {
     item.classList.toggle("popUp");
@@ -35,17 +36,20 @@ for (let item of faq_item) {
   });
 }
 
-if (window.innerWidth > 950) {
-  window.addEventListener("scroll", function (e) {
+window.addEventListener("scroll", function (e) {
+  if (window.innerWidth > 950) {
     if (window.scrollY > 0) {
       header.classList.add("active");
       burgerMenuBlock.classList.add("transform");
     } else {
       header.classList.remove("active");
-      burgerMenuBlock.classList.remove("transform");
     }
-  });
-}
+  } else {
+    header.classList.remove("active");
+    burgerMenuBlock.classList.remove("transform");
+  }
+});
+
 window.addEventListener("scroll", function (e) {
   if (window.scrollY > 0) {
     header.classList.add("border");
@@ -82,6 +86,7 @@ burgerMenu.addEventListener("click", function () {
   burgerOpen.classList.toggle("active");
   body.classList.toggle("overfloy");
   scrollUp.classList.remove("visiable");
+  html.classList.toggle("active");
 });
 
 orderBtns.forEach(function (btn) {

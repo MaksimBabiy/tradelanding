@@ -81,6 +81,7 @@ burgerMenu.addEventListener("click", function () {
   burgerClose.classList.toggle("active");
   burgerOpen.classList.toggle("active");
   body.classList.toggle("overfloy");
+  scrollUp.classList.remove("visiable");
 });
 
 orderBtns.forEach(function (btn) {

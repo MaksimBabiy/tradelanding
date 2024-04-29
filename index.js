@@ -113,7 +113,7 @@ function changeTextWithAnimation() {
   }, 1000);
 }
 
-setInterval(changeTextWithAnimation, 2000); // Смена текста каждые 3 секунды
+setInterval(changeTextWithAnimation, 2000);
 
 var options = {
   root: null,

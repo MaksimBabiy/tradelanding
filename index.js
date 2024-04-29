@@ -21,13 +21,28 @@ let product1 = document.querySelector(".price1");
 let product3 = document.querySelector(".price3");
 let productPrice = product && product.dataset.price;
 let modal_order = document.querySelector(".modal_order");
-let modalClose = document.querySelector(".modal_close");
 let main = document.querySelector("main");
 let email_error = document.querySelector(".email_error");
 let order_forms = document.querySelectorAll("form");
 let emailInputs = document.querySelectorAll(".email");
 let header = document.querySelector("header");
 let html = document.querySelector("html");
+let modal = document.querySelector(".modal");
+let modalBtns = document.querySelectorAll(".modalBtn");
+let modalClose = document.querySelector(".modalClose");
+
+modalBtns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    modal.classList.add("active");
+    html.classList.add("active");
+  });
+});
+
+modalClose.addEventListener("click", function () {
+  modal.classList.remove("active");
+  html.classList.remove("active");
+});
+
 for (let item of faq_item) {
   item.addEventListener("click", function () {
     item.classList.toggle("popUp");
@@ -182,4 +197,17 @@ btn2.addEventListener("click", function () {
   btn1.classList.remove("active");
   table1.classList.remove("active");
   table2.classList.add("active");
+});
+function validateEmail(email) {
+  const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  return regex.test(email);
+}
+const emailError = document.querySelector(".email_error");
+const emailInput = document.querySelector("#email");
+emailInput.addEventListener("input", function (event) {
+  if (validateEmail(event.target.value)) {
+    emailError.innerHTML = "";
+  } else {
+    emailError.innerHTML = "Please enter a valid email address.";
+  }
 });

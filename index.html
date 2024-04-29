@@ -26,6 +26,32 @@
   <!-- prettier-ignore -->
   <body>
     <div id="overlay"></div>
+    <div class="modal">
+      <svg class="modalClose" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="#1e3f62"></path> </g></svg>
+      <div class="modalContent">
+        <img src="images/banners/modallogo.png" alt="logo" width="300" height="72">
+        <form action="">
+          <div class="inputBlock">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+          </div>
+          <div class="inputBlock">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <span class="email_error"></span>
+          </div>
+          <div class="inputBlock">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+          </div>
+          <div class="inputBlock">
+            <label for="password2">Confirm password</label>
+            <input type="password" name="password2" id="password2">
+          </div>
+          <button class="btn">Register</button>
+        </form>
+      </div>
+    </div>
     <button class="scrollUp" aria-label="Scroll Up">
       <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C12.2652 3 12.5196 3.10536 12.7071 3.29289L19.7071 10.2929C20.0976 10.6834 20.0976 11.3166 19.7071 11.7071C19.3166 12.0976 18.6834 12.0976 18.2929 11.7071L13 6.41421V20C13 20.5523 12.5523 21 12 21C11.4477 21 11 20.5523 11 20V6.41421L5.70711 11.7071C5.31658 12.0976 4.68342 12.0976 4.29289 11.7071C3.90237 11.3166 3.90237 10.6834 4.29289 10.2929L11.2929 3.29289C11.4804 3.10536 11.7348 3 12 3Z" fill="#ffffff"></path> </g></svg>
     </button>
@@ -38,11 +64,11 @@
           </div>
            <nav>
             <ul class="burgerList">
-              <li class="order"><a href="instruction.html" title="Home">Home</a></li>
-              <li class="order"><a href="avoid.html" title="About">About</a></li>
-              <li class="order"><a href="delivery.html" title="Challenges">Challenges</a></li>
-              <li class="order"><a href="about.html" title="Forex Funding">Forex Funding</a></li>
-              <li class="order"><a href="reviews.html" title="Faq">Faq</a></li>
+              <li class="order"><a href="#title" title="Home">Home</a></li>
+              <li class="order"><a href="#about" title="About">About</a></li>
+              <li class="order"><a href="#choice" title="Challenges">Challenges</a></li>
+              <li class="order"><a href="#forex" title="Forex Funding">Forex Funding</a></li>
+              <li class="order"><a href="#faq" title="Faq">Faq</a></li>
               <li class="order"><a href="faq.html" title="Affilate">Affilate</a></li>
             </ul>
            </nav>
@@ -83,30 +109,30 @@
       <div class="header_main">
         <div class="container">
           <a href="index.html" alt="logo" title="logo">
-            <img src="images/banners/logo.png" alt="logo" width="250" height="56.94" >
+            <img src="images/banners/logo.png" alt="logo" width="200" height="45.55" >
           </a>
           <nav class="navigation">
             <ul class="navigation">
               <li>
-                <a href="#" title="Home">Home</a> 
+                <a href="#title" title="Home">Home</a> 
               </li>
               <li>
-                <a href="#" title="About">About</a>
+                <a href="#about" title="About">About</a>
               </li>
               <li>
-                <a href="#" title="Challenges">Challenges</a> 
+                <a href="#choice" title="Challenges">Challenges</a> 
               </li>
               <li>
-                <a href="#" title="Forex Funding">Forex Funding</a>
+                <a href="#forex" title="Forex Funding">Forex Funding</a>
               </li>
               <li>
-                <a href="#" title="Faq">Faq</a>
+                <a href="#faq" title="Faq">Faq</a>
               </li>
               <li>
-                <a href="#" title="Affilate">Affilate</a>
+                <a href="#" title="Affilate" class="modalBtn">Affilate</a>
               </li>     
             </ul>
-            <button class="btn" aria-label="Client Area">CLIENT AREA</button>
+            <button class="btn modalBtn" aria-label="Client Area" >CLIENT AREA</button>
           </nav>
           <button aria-label="Menu" class="burgerMenu">
             <svg class="burgerOpen" id="burgerMenu" width="30px" height="30px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 18L20 18" stroke="#1e3f62" stroke-width="2" stroke-linecap="round"></path> <path d="M4 12L20 12" stroke="#1e3f62" stroke-width="2" stroke-linecap="round"></path> <path d="M4 6L20 6" stroke="#1e3f62" stroke-width="2" stroke-linecap="round"></path> </g></svg>
@@ -117,7 +143,7 @@
     </div>
   </header>
   <main>
-    <section class="title">
+    <section class="title" id="title">
       <div class="container">
        <div class="title_top">
         <div class="title_left">
@@ -203,7 +229,7 @@
         </div>
       </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
       <div class="container">
         <div class="about_top">
           <div class="about_top-left">
@@ -217,7 +243,7 @@
             <img src="images/banners/about.png" alt="about" loading="lazy" width="493px" height="483px"> 
           </div>
         </div>
-        <div class="about_bottom">
+        <div class="about_bottom" id="forex">
           <div class="about_bottom-top">
             <span>HOW TO GET FUNDED?</span>
             <h2>Funding Process</h2>
@@ -286,7 +312,7 @@
         </div>
       </div>
     </section>
-    <section class="faq">
+    <section class="faq" id="faq">
       <div class="container">
         <div class="faq_top">
           <span class="faq_top-span">HELP TO GET STARTED</span>
@@ -508,7 +534,7 @@
         </div>
       </div>
     </section>
-    <section class="choice">
+    <section class="choice" id="choice">
       <div class="container">
         <div class="choice_top">
           <span>PICK YOUR CHALLENGE</span>
@@ -840,7 +866,7 @@
         <button class="btn" aria-label="Register Now">REGISTER NOW</button>
       </div>
       <a href="index.html" alt="logo" title="logo">
-        <img src="images/banners/logo.png" alt="logo" width="250" height="56.94">
+        <img src="images/banners/logo.png" alt="logo" width="200" height="45.55">
       </a>
       <span>Terms Of Service ━ Privacy Policy ━ Risk Disclosure</span>
       <div class="footer-socials">

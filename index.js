@@ -31,6 +31,20 @@ let modal = document.querySelector(".modal");
 let modalBtns = document.querySelectorAll(".modalBtn");
 let modalClose = document.querySelector(".modalClose");
 
+languageBtn.addEventListener("click", () => {
+  languageList.classList.toggle("active");
+  locationArrow.classList.toggle("active");
+});
+locationItems.forEach(function (item) {
+  item.addEventListener("click", function () {
+    locationItems.forEach(function (li) {
+      li.classList.remove("active");
+    });
+    this.classList.add("active");
+    locationName.innerHTML = this.innerHTML;
+  });
+});
+
 modalBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     modal.classList.add("active");
@@ -153,17 +167,13 @@ const intersection = (target) => {
   observer.observe(target);
 };
 
-intersection(document.querySelector(".about_top-left"));
-intersection(document.querySelector(".advantages_left"));
 intersection(document.querySelector(".advantages_right"));
-intersection(document.querySelector(".about_top-right"));
-intersection(document.querySelector(".about_bottom-top"));
-intersection(document.querySelector(".future_top-left"));
-intersection(document.querySelector(".future_top-right"));
-intersection(document.querySelector(".future_bottom-left"));
-intersection(document.querySelector(".future_bottom-right"));
-intersection(document.querySelector(".why_top"));
-intersection(document.querySelector(".choice_top"));
+intersection(document.querySelector(".about_bottom-title"));
+intersection(document.querySelector(".about_bottom-bottom"));
+intersection(document.querySelector(".decoding_top"));
+intersection(document.querySelector(".elevating .container"));
+intersection(document.querySelector(".growth .container"));
+intersection(document.querySelector(".conclusion .container"));
 
 for (let item of faq_item) {
   intersection(item);
@@ -182,22 +192,6 @@ for (let row of rows) {
   });
 }
 
-let table1 = document.querySelector(".table1");
-let table2 = document.querySelector(".table2");
-let btn1 = document.querySelector(".btn1");
-let btn2 = document.querySelector(".btn2");
-btn1.addEventListener("click", function () {
-  table1.classList.add("active");
-  table2.classList.remove("active");
-  btn2.classList.remove("active");
-  btn1.classList.add("active");
-});
-btn2.addEventListener("click", function () {
-  btn2.classList.add("active");
-  btn1.classList.remove("active");
-  table1.classList.remove("active");
-  table2.classList.add("active");
-});
 function validateEmail(email) {
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   return regex.test(email);
@@ -210,4 +204,32 @@ emailInput.addEventListener("input", function (event) {
   } else {
     emailError.innerHTML = "Please enter a valid email address.";
   }
+});
+
+const swiper = new Swiper(".swiper", {
+  direction: "horizontal",
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 0,
+  autoplay: {
+    delay: 1000,
+  },
+  breakpoints: {
+    360: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    650: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 10,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 10,
+    },
+  },
 });
